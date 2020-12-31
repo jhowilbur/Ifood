@@ -1,10 +1,30 @@
-version: "3.3"
+version: '3'
+
 services:
-  postgres_register:
-    container_name: postgres_register
-    image: postgres:12.2
+  teste-postgres-compose:
+    image: postgres
     environment:
-      - POSTGRES_USER=register
-      - POSTGRES_PASSWORD=register
+     POSTGRES_PASSWORD: "admin123"
     ports:
-      - 5432:5432
+      - "5432:5432"
+    volumes:
+      - ./PostgreSQL/ifood:/var/lib/postgresql/data
+      - ./PostgreSQL/init:/docker-entrypoint-initdb.d/
+    networks:
+      - postgres-compose-network
+
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "wilbur.dev@outlook.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin123"
+    ports:
+      - "16543:80"
+    depends_on:
+      - teste-postgres-compose
+    networks:
+      - postgres-compose-network
+
+networks:
+  postgres-compose-network:
+    driver: bridge

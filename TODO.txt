@@ -1,0 +1,4 @@
+
+
+Após finalizado fazer:
+- testes com Gatling e printar resultados para readme.md
