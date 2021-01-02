@@ -73,11 +73,11 @@
       <artifactId>commons-lang3</artifactId>
       <version>3.11</version>
     </dependency>
-    <!-- JDBC driver dependencies -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
+    <!-- For tests -->
   </dependencies>
   <build>
     <plugins>

@@ -1,12 +1,16 @@
 package com.github.wilbur.ifood.register;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.persistence.*;
+import javax.xml.namespace.QName;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "dish")
+@JsonFilter("filter")
 public class Dish extends PanacheEntityBase
 {
     @Id

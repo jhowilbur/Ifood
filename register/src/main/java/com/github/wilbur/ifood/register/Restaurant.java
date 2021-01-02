@@ -1,6 +1,8 @@
 package com.github.wilbur.ifood.register;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,8 +11,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "restaurant")
-public class Restaurant extends PanacheEntityBase {
-
+public class Restaurant extends PanacheEntityBase
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
