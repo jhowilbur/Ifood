@@ -24,5 +24,10 @@ sudo docker-compose up
 Responsible for I/O operations between locations, dishes and restaurants.
 
 #### Domain model
+#### Register
 pic 3
 
+script database Register for docker-entrypoint-initdb.d
+```
+./PostgreSQL/init-database/init-register-db.sh
+```
